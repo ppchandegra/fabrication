@@ -131,7 +131,7 @@
                         <div class="card-content">
                             <h3>{{ $subService->title }}</h3>
                             <p>{{ Str::limit(strip_tags($subService->description), 100) }}</p>
-                            <a href="{{ route('frontend.services.show', ['id' => $subService->id]) }}" class="read-more">Learn More →</a>
+                            <a href="{{ route('frontend.sub-services.show', $subService->id) }}" class="read-more">Learn More →</a>
                         </div>
                     </div>
                 </div>

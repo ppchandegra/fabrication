@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\ContactController as AdminContactController;
 use App\Http\Controllers\Admin\GalleryController as AdminGalleryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
-use App\Http\Controllers\Admin\SubServiceController;
+use App\Http\Controllers\Frontend\SubServiceController;
 use Illuminate\Support\Facades\Route;
 
 // Frontend Routes
@@ -21,6 +21,7 @@ Route::get('/gallery/{gallery}', [GalleryController::class, 'show'])->name('fron
 Route::get('/contact', [ContactController::class, 'index'])->name('frontend.contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('frontend.contact.store');
 Route::get('/policy', [HomeController::class, 'policy'])->name('policy');
+Route::get('/sub-services/{id}', [SubServiceController::class, 'show'])->name('frontend.sub-services.show');
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
