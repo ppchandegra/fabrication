@@ -6,6 +6,10 @@
 
 <!-- Hero Section -->
 <section class="about-hero-section">
+    <div class="hero-background">
+        <img src="{{ asset('storage/about/hero-bg.avif') }}" alt="About Us Background" class="hero-bg-image">
+        <div class="hero-overlay"></div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -128,10 +132,35 @@
 <style>
 /* About Page Styles */
 .about-hero-section {
-    background: linear-gradient(135deg, #1B3664 0%, #0D1F3C 100%);
+    position: relative;
     color: #fff;
-    padding: 100px 0;
+    padding: 150px 0;
     text-align: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(27, 54, 100, 0.9) 0%, rgba(13, 31, 60, 0.9) 100%);
 }
 
 .about-hero-title {
@@ -140,12 +169,14 @@
     font-weight: 700;
     margin-bottom: 1rem;
     color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .about-hero-subtitle {
     font-family: 'Lora', serif;
     font-size: 1.25rem;
     opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .section-padding {
@@ -252,6 +283,10 @@
 }
 
 @media (max-width: 768px) {
+    .about-hero-section {
+        padding: 100px 0;
+    }
+    
     .about-hero-title {
         font-size: 2.5rem;
     }
