@@ -1,0 +1,16 @@
+/* Custom Admin Styles */
+.small-box {
+    transition: transform 0.3s;
+}
+
+.small-box:hover {
+    transform: translateY(-5px);
+}
+
+.small-box .icon {
+    transition: all 0.3s;
+}
+
+.small-box:hover .icon {
+    transform: scale(1.1);
+} 
